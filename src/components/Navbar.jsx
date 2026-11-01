@@ -26,7 +26,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-xs font-bold tracking-widest uppercase text-neutral-600">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs font-bold tracking-widest uppercase text-neutral-600">
           <a href="/#about" className="hover:text-black transition-colors no-underline">About</a>
           <a href="/services" onClick={(e) => handleRoute(e, "/services")} className="hover:text-black transition-colors no-underline">Services</a>
           <a href="/#clients" className="hover:text-black transition-colors no-underline">Clients</a>
@@ -72,7 +72,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
         </nav>
 
         {/* Main CTA Button: Get A Quote */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center">
           <button
             onClick={onContactClick}
             className="btn-satisfying-cta text-xs font-bold uppercase tracking-widest text-white bg-black rounded-full px-6 py-2.5 cursor-pointer flex items-center gap-2"
@@ -85,7 +85,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenu(!mobileMenu)}
-          className={`md:hidden relative flex items-center justify-center h-10 w-10 rounded-full border transition-all duration-300 active:scale-90 cursor-pointer z-50 ${
+          className={`lg:hidden relative flex items-center justify-center h-10 w-10 rounded-full border transition-all duration-300 active:scale-90 cursor-pointer z-50 ${
             mobileMenu
               ? "bg-black text-white border-black rotate-90 shadow-md"
               : "bg-neutral-100 hover:bg-neutral-200 border-neutral-200 text-neutral-900 shadow-sm"
@@ -98,7 +98,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
 
       {/* Mobile Drawer with Smooth Animations */}
       {mobileMenu && (
-        <div className="md:hidden fixed inset-0 top-16 sm:top-[76px] bg-white/95 backdrop-blur-2xl text-black px-7 py-8 flex flex-col justify-between text-base font-bold uppercase tracking-widest z-[9999] shadow-2xl overflow-y-auto border-t border-neutral-200 animate-drawer-down">
+        <div className="lg:hidden fixed inset-0 top-16 sm:top-[76px] bg-white/95 backdrop-blur-2xl text-black px-7 py-8 flex flex-col justify-between text-base font-bold uppercase tracking-widest z-[9999] shadow-2xl overflow-y-auto border-t border-neutral-200 animate-drawer-down">
           <div className="flex flex-col gap-2">
             {[
               { href: "/#about", label: "About" },

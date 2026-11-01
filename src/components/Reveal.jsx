@@ -21,6 +21,12 @@ export function Reveal({
     const el = ref.current;
     if (!el) return;
 
+    // No IntersectionObserver support (ancient/embedded browsers): show everything
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) {
       setVisible(true);
