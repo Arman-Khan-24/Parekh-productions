@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Reveal } from "./Reveal";
 import { hubsData } from "./globe/hubsData";
 import { WorldMap2D } from "./globe/WorldMap2D";
 import { HubInfoSidebar } from "./globe/HubInfoSidebar";
@@ -66,7 +67,7 @@ export function Destinations({ onContactClick }) {
       
       {/* Editorial Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-        <div>
+        <Reveal>
           <p className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-neutral-400 mb-2">
             GEOGRAPHIC FOOTPRINT &middot; CAMERA CREW NETWORK
           </p>
@@ -77,7 +78,7 @@ export function Destinations({ onContactClick }) {
           <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl">
             Interactive territory map with shoot archives. Select a hub to inspect past coverage, multi-camera films, and camera-crew corridors.
           </p>
-        </div>
+        </Reveal>
 
         {/* Map Control Buttons */}
         <WorldMapControls

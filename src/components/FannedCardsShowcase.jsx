@@ -1,17 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function FannedCardsShowcase() {
   const [fanProgress, setFanProgress] = useState(0);
+  const rafRef = useRef(null);
 
   useEffect(() => {
+    // Reduced-motion users get the final fanned layout with zero scroll-linked motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setFanProgress(1);
+      return;
+    }
+
+    const repaint = () => {
+      rafRef.current = null;
+      const progress = Math.min(Math.max((window.scrollY - 50) / 450, 0), 1);
+      setFanProgress((prev) => (prev === progress ? prev : progress));
+    };
+
+    // Scroll runs through requestAnimationFrame: max one state flush per frame,
+    // so a fast wheel spin cannot queue a re-render storm.
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const progress = Math.min(Math.max((scrollY - 50) / 450, 0), 1);
-      setFanProgress(progress);
+      if (rafRef.current == null) {
+        rafRef.current = requestAnimationFrame(repaint);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
   }, []);
 
   return (
@@ -27,7 +48,8 @@ export function FannedCardsShowcase() {
           {/* Left Card: Auto Expo Reveal Film Coverage */}
           <div
             style={{
-              transform: `translateX(-${30 + fanProgress * 28}%) translateY(${6 - fanProgress * 6}px) rotate(-${8 - fanProgress * 3}deg) scale(0.92)`,
+              transform: `translate3d(-${30 + fanProgress * 28}%, ${6 - fanProgress * 6}px, 0) rotate(-${8 - fanProgress * 3}deg) scale3d(0.92, 0.92, 1)`,
+              willChange: "transform",
             }}
             className="absolute z-10 w-[170px] xs:w-[210px] sm:w-[290px] md:w-[350px] aspect-[4/5] rounded-[22px] sm:rounded-[32px] overflow-hidden shadow-[0_15px_35px_rgba(0,0,0,0.14)] border border-neutral-200/80 bg-zinc-800 transition-all duration-500 ease-out cursor-pointer hover:z-30 hover:!-translate-x-[48%] hover:!-translate-y-4 hover:!rotate-[-11deg] hover:scale-[1.03] hover:shadow-[0_25px_50px_rgba(0,0,0,0.25)] group-hover/showcase:translate-x-[-38%]"
           >
@@ -52,7 +74,8 @@ export function FannedCardsShowcase() {
           {/* Center Card: High-Energy Auto Expo Commercial Video Loop */}
           <div
             style={{
-              transform: `translateY(-${fanProgress * 12}px) scale(1)`,
+              transform: `translate3d(0, -${fanProgress * 12}px, 0) scale3d(1, 1, 1)`,
+              willChange: "transform",
             }}
             className="relative z-20 w-[190px] xs:w-[230px] sm:w-[320px] md:w-[380px] aspect-[4/5] rounded-[22px] sm:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.22)] border-2 border-white bg-zinc-900 transition-all duration-500 ease-out cursor-pointer hover:z-30 hover:!scale-[1.07] hover:!-translate-y-5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
           >
@@ -85,7 +108,8 @@ export function FannedCardsShowcase() {
           {/* Right Card: High-Octane RCB Himalaya Press Meet */}
           <div
             style={{
-              transform: `translateX(${30 + fanProgress * 28}%) translateY(${10 - fanProgress * 6}px) rotate(${8 - fanProgress * 3}deg) scale(0.92)`,
+              transform: `translate3d(${30 + fanProgress * 28}%, ${10 - fanProgress * 6}px, 0) rotate(${8 - fanProgress * 3}deg) scale3d(0.92, 0.92, 1)`,
+              willChange: "transform",
             }}
             className="absolute z-10 w-[170px] xs:w-[210px] sm:w-[290px] md:w-[350px] aspect-[4/5] rounded-[22px] sm:rounded-[32px] overflow-hidden shadow-[0_15px_35px_rgba(0,0,0,0.14)] border border-neutral-200/80 bg-zinc-800 transition-all duration-500 ease-out cursor-pointer hover:z-30 hover:!translate-x-[48%] hover:!-translate-y-4 hover:!rotate-[11deg] hover:scale-[1.03] hover:shadow-[0_25px_50px_rgba(0,0,0,0.25)] group-hover/showcase:translate-x-[38%]"
           >

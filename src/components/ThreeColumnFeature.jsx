@@ -1,12 +1,14 @@
+import { Reveal } from "./Reveal";
+
 export function ThreeColumnFeature() {
   return (
     <section id="services" className="py-8 sm:py-12 px-6 sm:px-12 lg:px-16 w-full max-w-[1400px] mx-auto overflow-hidden">
-      
+
       {/* 3-Column Grid with Horizontal 16:10 Aspect Ratios (Fluid Responsive, No Clipping or Overflow) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch w-full">
-        
+
         {/* Left Squarish/Horizontal Card */}
-        <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-neutral-900 group">
+        <Reveal className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-neutral-900 group">
           <img
             src="/assets/parekh/client_media/commercial-food-1.jpg"
             alt="Parekh Commercial Production"
@@ -22,10 +24,10 @@ export function ThreeColumnFeature() {
               Brand & Tabletop Commercials
             </h3>
           </div>
-        </div>
+        </Reveal>
 
         {/* Center Card: Pure Crisp White matching page background exactly (Zero Shadow, Zero Border) */}
-        <div className="relative aspect-[16/10] rounded-3xl bg-white p-6 sm:p-10 flex flex-col justify-center items-center text-center">
+        <Reveal delay={120} className="relative aspect-[16/10] rounded-3xl bg-white p-6 sm:p-10 flex flex-col justify-center items-center text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black uppercase tracking-tight text-neutral-950 leading-[1.08]">
             WE MAKE <br />
             VIDEOS THAT <br />
@@ -34,10 +36,10 @@ export function ThreeColumnFeature() {
           <span className="mt-5 text-[11px] sm:text-xs uppercase tracking-widest text-neutral-400 font-bold">
             PAREKH STUDIO · 100% IN-HOUSE CREW
           </span>
-        </div>
+        </Reveal>
 
         {/* Right Squarish/Horizontal Card */}
-        <div className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-neutral-900 group">
+        <Reveal delay={240} className="relative aspect-[16/10] rounded-3xl overflow-hidden bg-neutral-900 group">
           <img
             src="/assets/parekh/client_media/auditorium.jpg"
             alt="Parekh Venue Cinematography"
@@ -53,7 +55,7 @@ export function ThreeColumnFeature() {
               Multi-Camera Broadcast Film
             </h3>
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

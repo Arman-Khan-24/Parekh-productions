@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Search, ChevronRight, X, ExternalLink, Sparkles } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export function ServicesAccordion({ onOpenQuote }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -113,7 +114,6 @@ export function ServicesAccordion({ onOpenQuote }) {
         "Pre-wedding & bridal portrait sessions at palaces, beaches & cityscapes",
         "Sangeet & reception multi-camera films with same-night recap cuts",
         "Destination wedding photography (Udaipur, Goa, Jaipur & UK estates)",
-        "Full wedding planning, decor & mandap design via Heavenly Weds",
         "Cinematic couple reels & same-day social cuts",
       ],
     },
@@ -140,14 +140,14 @@ export function ServicesAccordion({ onOpenQuote }) {
   return (
     <section id="capabilities" className="py-10 sm:py-16 px-4 sm:px-8 max-w-3xl mx-auto scroll-mt-24">
       {/* Title: Pure Luxury Monochrome Theme */}
-      <div className="text-center mb-8">
+      <Reveal className="text-center mb-8">
         <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight font-display text-neutral-900">
           Our Services
         </h2>
         <p className="mt-2 text-xs sm:text-sm text-neutral-500 font-medium tracking-wide">
           Production Divisions &amp; Technical Capabilities &middot; Mumbai &amp; London
         </p>
-      </div>
+      </Reveal>
 
       {/* Pill Search Bar in Sleek Matte Black with Pure Crimson Red Focus Ring */}
       <div className="relative mb-8">
@@ -176,7 +176,7 @@ export function ServicesAccordion({ onOpenQuote }) {
       </div>
 
       {/* Minimalist List with Strong Contrast, Red Accents & Chevron Arrows */}
-      <div className="divide-y divide-neutral-200 border-y border-neutral-200">
+      <Reveal delay={120} className="divide-y divide-neutral-200 border-y border-neutral-200">
         {filtered.length === 0 ? (
           <div className="py-12 text-center text-sm text-neutral-500">
             No service found matching &ldquo;{searchQuery}&rdquo;.
@@ -306,7 +306,7 @@ export function ServicesAccordion({ onOpenQuote }) {
             );
           })
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

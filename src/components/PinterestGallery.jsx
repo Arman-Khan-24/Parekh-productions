@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Sparkles, ArrowLeft, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const galleryCategories = [
   "All",
@@ -217,7 +218,7 @@ export function PinterestGallery({ onBackHome }) {
   return (
     <section className="py-8 sm:py-16 lg:py-20 px-4 sm:px-12 lg:px-16 w-full max-w-[1600px] mx-auto bg-white min-h-screen">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
+      <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-red-600 mb-2">
             <Sparkles className="h-3.5 w-3.5" />
@@ -230,7 +231,7 @@ export function PinterestGallery({ onBackHome }) {
             Explore uncompressed video aftermovies, expo floor archives, and campaign media captures. Click any card to expand full photo &amp; video slides.
           </p>
         </div>
-      </div>
+      </Reveal>
 
       {/* Filter Tabs */}
       <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 sm:mb-12 border-b border-neutral-200/70 pb-4 sm:pb-6">

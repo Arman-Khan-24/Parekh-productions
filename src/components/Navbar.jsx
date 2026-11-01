@@ -16,21 +16,13 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-[0_2px_20px_rgba(0,0,0,0.04)] border-b border-neutral-100">
       <div className="w-full max-w-[1600px] mx-auto flex items-center justify-between px-6 sm:px-12 py-4 sm:py-5">
         
-        {/* Brand */}
-        <a href="/" onClick={(e) => handleRoute(e, "/")} className="flex items-center gap-3 no-underline group">
+        {/* Brand: logo only */}
+        <a href="/" onClick={(e) => handleRoute(e, "/")} className="flex items-center no-underline group">
           <img
             src="/assets/parekh/parekh-productions-logo-cropped.png"
             alt="Parekh Productions"
-            className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="flex flex-col">
-            <span className="text-sm sm:text-base font-black tracking-wider text-black uppercase font-display hidden xs:inline leading-none">
-              PAREKH PRODUCTIONS
-            </span>
-            <span className="text-[9px] font-mono tracking-widest text-neutral-400 uppercase hidden xs:inline mt-0.5">
-              {isLondon ? "LONDON &bull; UK DIVISION" : "MUMBAI &bull; PAN-INDIA"}
-            </span>
-          </div>
         </a>
 
         {/* Desktop Navigation */}

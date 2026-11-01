@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { siteContent } from "../data/siteContent";
 import { ArrowRight, ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export function WheelProjectsShowcase({ onViewAllProjects }) {
   const projects = siteContent.clients;
@@ -216,7 +217,7 @@ export function WheelProjectsShowcase({ onViewAllProjects }) {
     >
       {/* Top Header */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div>
+        <Reveal>
           <p className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-neutral-400 mb-2">
             FEATURED PORTFOLIO &middot; DYNAMIC FOCUS WHEEL
           </p>
@@ -224,7 +225,7 @@ export function WheelProjectsShowcase({ onViewAllProjects }) {
             Selected Works <br className="hidden sm:inline" />
             &amp; Productions
           </h2>
-        </div>
+        </Reveal>
 
         <div className="flex items-center gap-3">
           <button

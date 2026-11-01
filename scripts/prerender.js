@@ -1,4 +1,4 @@
-import fs from "fs";
+﻿import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { build } from "vite";
@@ -10,7 +10,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.resolve(projectRoot, "dist");
 const templatePath = path.resolve(distDir, "index.html");
 
-const BASE_URL = "https://parekhevents.com";
+const BASE_URL = "https://parekhproductions.com";
 const canonical = (p) => `${BASE_URL}${p}`;
 const M = (p) => metaByPath[p];
 
@@ -112,7 +112,7 @@ const routes = [
         },
         {
           "@type": "VideoObject",
-          name: "Finbridge Expo Mumbai 2026 — Official Highlight Film",
+          name: "Finbridge Expo Mumbai 2026 â€” Official Highlight Film",
           description:
             "Live multi-camera broadcast and expo floor film at NESCO Mumbai for 8,000+ delegates.",
           thumbnailUrl: `${BASE_URL}/assets/parekh/portfolio/finbridge-stage.jpg`,
@@ -122,7 +122,7 @@ const routes = [
         },
         {
           "@type": "VideoObject",
-          name: "Auto Expo Pavilion — Launch Reveal Film",
+          name: "Auto Expo Pavilion â€” Launch Reveal Film",
           description:
             "Synchronized launch-reveal cinematography and FPV drone capture across pavilion floors.",
           thumbnailUrl: `${BASE_URL}/assets/parekh/client_media/stage-lighting.jpg`,
@@ -147,13 +147,13 @@ const routes = [
       // Service-area business desk: no fabricated UK street address or phone line
       "@type": "LocalBusiness",
       "@id": `${canonical("/london")}#organization`,
-      name: "Parekh Productions Pvt Ltd — London & UK Desk",
+      name: "Parekh Productions Pvt Ltd â€” London & UK Desk",
       url: canonical("/london"),
       logo: `${BASE_URL}/assets/parekh/parekh-productions-logo.png`,
       image: buzz,
       description:
         "Wedding films, corporate event coverage, and broadcast cinema film production servicing London and the UK, coordinated by the Mumbai production house.",
-      priceRange: "£££",
+      priceRange: "Â£Â£Â£",
       areaServed: [
         "London",
         "Greater London",
@@ -285,9 +285,9 @@ function injectRouteHead(html, route) {
   }
 
   const hreflangTags = `
-    <link rel="alternate" hreflang="en-IN" href="https://parekhevents.com/" />
-    <link rel="alternate" hreflang="en-GB" href="https://parekhevents.com/london" />
-    <link rel="alternate" hreflang="x-default" href="https://parekhevents.com/" />`;
+    <link rel="alternate" hreflang="en-IN" href="https://parekhproductions.com/" />
+    <link rel="alternate" hreflang="en-GB" href="https://parekhproductions.com/london" />
+    <link rel="alternate" hreflang="x-default" href="https://parekhproductions.com/" />`;
   
   if (!html.includes('hreflang="en-IN"')) {
     html = html.replace('</head>', `${hreflangTags}\n</head>`);
@@ -307,7 +307,7 @@ function injectRouteHead(html, route) {
 }
 
 async function prerender() {
-  console.log("🚀 Starting Native Vite SSR Prerender (100% Linux/Vercel Compatible)...");
+  console.log("ðŸš€ Starting Native Vite SSR Prerender (100% Linux/Vercel Compatible)...");
 
   // Step 1: Build the SSR bundle in memory/dist-server
   const serverDistDir = path.resolve(projectRoot, "dist-server");
@@ -330,7 +330,7 @@ async function prerender() {
 
   // Step 4: Prerender each route directly to static HTML
   for (const route of routes) {
-    console.log(`🌐 Prerendering route: ${route.path} -> dist/${route.outFile}`);
+    console.log(`ðŸŒ Prerendering route: ${route.path} -> dist/${route.outFile}`);
     
     // Render full React component tree to string
     const appHtml = render(route.path);
@@ -351,7 +351,7 @@ async function prerender() {
     }
 
     fs.writeFileSync(outPath, renderedDoc, "utf8");
-    console.log(`✅ Successfully wrote prerendered HTML: ${outPath} (${(renderedDoc.length / 1024).toFixed(1)} KB)`);
+    console.log(`âœ… Successfully wrote prerendered HTML: ${outPath} (${(renderedDoc.length / 1024).toFixed(1)} KB)`);
   }
 
   // Clean up temporary server bundle
@@ -360,10 +360,10 @@ async function prerender() {
   } catch (cleanErr) {
     // Ignore Windows filesystem file-lock on OneDrive folders
   }
-  console.log("🎉 Native prerendering complete! 100% Vercel & SEO compliant.");
+  console.log("ðŸŽ‰ Native prerendering complete! 100% Vercel & SEO compliant.");
 }
 
 prerender().catch((err) => {
-  console.error("❌ Prerender failed:", err);
+  console.error("âŒ Prerender failed:", err);
   process.exit(1);
 });

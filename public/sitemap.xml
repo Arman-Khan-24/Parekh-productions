@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <!-- Mumbai (India) Primary Target Route -->
   <url>
-    <loc>https://parekhevents.com/</loc>
+    <loc>https://parekhproductions.com/</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://parekhevents.com/" />
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://parekhevents.com/london" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://parekhevents.com/" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://parekhproductions.com/" />
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://parekhproductions.com/london" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://parekhproductions.com/" />
   </url>
 
   <!-- London (UK) Target Route -->
   <url>
-    <loc>https://parekhevents.com/london</loc>
+    <loc>https://parekhproductions.com/london</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en-GB" href="https://parekhevents.com/london" />
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://parekhevents.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://parekhevents.com/" />
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://parekhproductions.com/london" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://parekhproductions.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://parekhproductions.com/" />
   </url>
 
   <!-- Services Directory -->
   <url>
-    <loc>https://parekhevents.com/services</loc>
+    <loc>https://parekhproductions.com/services</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
 
   <!-- Gallery Archive -->
   <url>
-    <loc>https://parekhevents.com/gallery</loc>
+    <loc>https://parekhproductions.com/gallery</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -42,7 +42,7 @@
 
   <!-- Keyword Landing: Event Photography & Videography -->
   <url>
-    <loc>https://parekhevents.com/corporate-events-mumbai</loc>
+    <loc>https://parekhproductions.com/corporate-events-mumbai</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -50,7 +50,7 @@
 
   <!-- Keyword Landing: Commercial Film Production -->
   <url>
-    <loc>https://parekhevents.com/commercial-film-production-mumbai</loc>
+    <loc>https://parekhproductions.com/commercial-film-production-mumbai</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -58,7 +58,7 @@
 
   <!-- Keyword Landing: Corporate Photography -->
   <url>
-    <loc>https://parekhevents.com/corporate-photography-mumbai</loc>
+    <loc>https://parekhproductions.com/corporate-photography-mumbai</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -66,7 +66,7 @@
 
   <!-- Keyword Landing: Corporate Video Production -->
   <url>
-    <loc>https://parekhevents.com/corporate-video-production-mumbai</loc>
+    <loc>https://parekhproductions.com/corporate-video-production-mumbai</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -74,7 +74,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://parekhevents.com/contact</loc>
+    <loc>https://parekhproductions.com/contact</loc>
     <lastmod>2026-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

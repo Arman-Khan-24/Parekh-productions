@@ -7,6 +7,7 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { QuoteModal } from "../components/QuoteModal";
 import { WhatsAppButton } from "../components/WhatsAppButton";
+import { Reveal } from "../components/Reveal";
 import { siteContent } from "../data/siteContent";
 import { pageContent } from "../data/pages";
 
@@ -47,6 +48,7 @@ export function SEOPage({ page, onNavigate }) {
 
       {/* Hero */}
       <header className="px-6 sm:px-12 max-w-7xl mx-auto pt-8 pb-12 sm:pb-16">
+        <Reveal>
         <p className="text-[11px] font-mono font-bold uppercase tracking-[0.3em] text-red-600 mb-4">
           {page.hero.eyebrow}
         </p>
@@ -89,10 +91,12 @@ export function SEOPage({ page, onNavigate }) {
             ))}
           </div>
         )}
+        </Reveal>
       </header>
 
       {/* Services pillars */}
       <section className="px-6 sm:px-12 max-w-7xl mx-auto pb-16">
+        <Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {siteContent.services.map((service, i) => {
             const Icon = serviceIcon(i);
@@ -135,10 +139,12 @@ export function SEOPage({ page, onNavigate }) {
             ))}
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* Gallery strip */}
       <section className="px-6 sm:px-12 max-w-7xl mx-auto pb-16">
+        <Reveal>
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-neutral-900">Selected Frames</h2>
           <a
@@ -169,10 +175,12 @@ export function SEOPage({ page, onNavigate }) {
               </div>
             ))}
         </div>
+        </Reveal>
       </section>
 
       {/* Locations + Contact CTA */}
       <section className="px-6 sm:px-12 max-w-7xl mx-auto pb-20">
+        <Reveal>
         <div className="p-8 sm:p-10 rounded-3xl bg-neutral-950 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-neutral-400 mb-3">
@@ -193,6 +201,7 @@ export function SEOPage({ page, onNavigate }) {
             Get Instant Quote &rarr;
           </button>
         </div>
+        </Reveal>
       </section>
 
       <Footer onQuoteClick={handleQuote} onGalleryClick={() => onNavigate("/gallery")} />

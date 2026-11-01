@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export function StudioShowcase() {
   const slides = [

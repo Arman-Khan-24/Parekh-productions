@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import { StudioShowcase } from "../components/StudioShowcase";
 import { QuoteModal } from "../components/QuoteModal";
 import { WhatsAppButton } from "../components/WhatsAppButton";
+import { Reveal } from "../components/Reveal";
 import { 
   Building2, 
   MapPin, 
@@ -126,6 +127,7 @@ export function ServicesPage({ onOpenQuote, onNavigate }) {
         
         {/* Services Page Header */}
         <section className="px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto pb-10 border-b border-neutral-100">
+          <Reveal>
           <div className="flex items-center gap-2 mb-3">
             <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse" />
             <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold">
@@ -140,11 +142,12 @@ export function ServicesPage({ onOpenQuote, onNavigate }) {
           <p className="mt-4 text-base sm:text-lg text-neutral-600 max-w-3xl leading-relaxed">
             From corporate expo coverage at NESCO and Jio World Centre to royal wedding films and broadcast commercial TVCs. All camera work backed by in-house cinema gear and experienced directors of photography.
           </p>
+          </Reveal>
         </section>
 
         {/* Detailed Services Deep-Dive */}
         <section className="px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto py-12">
-          <div className="space-y-12">
+          <Reveal className="space-y-12">
             {detailedServices.map((service, index) => (
               <div 
                 key={service.id}
@@ -212,7 +215,7 @@ export function ServicesPage({ onOpenQuote, onNavigate }) {
                 </div>
               </div>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         {/* Studio Showcase — Cinema & Coverage Packages */}
@@ -220,6 +223,7 @@ export function ServicesPage({ onOpenQuote, onNavigate }) {
 
         {/* Direct Quote Banner */}
         <section className="px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto my-12 p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <Reveal>
           <div>
             <span className="text-[11px] font-mono uppercase tracking-widest text-red-400 font-bold block mb-1">
               [DIRECT PRODUCTION QUOTES]
@@ -237,6 +241,7 @@ export function ServicesPage({ onOpenQuote, onNavigate }) {
           >
             Request Rate Card &rarr;
           </button>
+          </Reveal>
         </section>
 
       </main>
