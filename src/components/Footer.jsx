@@ -1,4 +1,4 @@
-import { ArrowUpRight, MessageCircle, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
+import { ArrowUpRight, MessageCircle, MapPin, Phone, ExternalLink } from "lucide-react";
 import { siteContent } from "../data/siteContent";
 
 export function Footer({ onQuoteClick, onGalleryClick, locationMode = "mumbai" }) {

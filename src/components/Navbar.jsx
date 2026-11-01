@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ArrowRight, ExternalLink, Globe } from "lucide-react";
+import { Menu, X, ArrowRight, ExternalLink } from "lucide-react";
 
 export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumbai", onNavigate }) {
   const [mobileMenu, setMobileMenu] = useState(false);

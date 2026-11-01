@@ -187,17 +187,6 @@ html, body {
   animation: fadeIn 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Animated Transcontinental Flight Arc */
-@keyframes dashAnimation {
-  to {
-    stroke-dashoffset: -32;
-  }
-}
-
-.flight-path-animated {
-  animation: dashAnimation 1.6s linear infinite;
-}
-
 /* ------------------------------------------------------
    Scroll-Reveal (Reveal.jsx)
    One-shot enter transition — no scroll listener cost.

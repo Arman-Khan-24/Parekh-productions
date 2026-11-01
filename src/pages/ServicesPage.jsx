@@ -5,22 +5,9 @@ import { StudioShowcase } from "../components/StudioShowcase";
 import { QuoteModal } from "../components/QuoteModal";
 import { WhatsAppButton } from "../components/WhatsAppButton";
 import { Reveal } from "../components/Reveal";
-import { 
-  Building2, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Camera, 
-  Film, 
-  Calendar, 
+import {
   CheckCircle2, 
   ExternalLink,
-  ArrowRight,
-  Sparkles,
-  Layers,
-  Music,
-  Video,
-  Heart
 } from "lucide-react";
 
 export function ServicesPage({ onOpenQuote, onNavigate }) {

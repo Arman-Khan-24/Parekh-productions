@@ -188,5 +188,3 @@ export const metaByPath = Object.fromEntries(
     { title: p.title, description: p.description, keywords: p.keywords },
   ])
 );
-
-export const staticRoutes = Object.values(pageContent).map(({ key, path }) => ({ key, path }));
