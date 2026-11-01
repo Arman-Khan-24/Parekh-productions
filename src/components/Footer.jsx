@@ -55,7 +55,7 @@ export function Footer({ onQuoteClick, onGalleryClick, locationMode = "mumbai" }
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-red-400 mb-4 border border-red-500/20">
               <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-              <span>Direct Deployment · 30-Minute Priority Dispatch</span>
+              <span>Direct Booking · 30-Minute Priority Response</span>
             </div>
             <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
               Ready to produce <br />
@@ -96,16 +96,17 @@ export function Footer({ onQuoteClick, onGalleryClick, locationMode = "mumbai" }
             </div>
             {isUK ? (
               <p className="text-neutral-400 leading-relaxed font-sans text-xs">
-                12 Berkeley Square, Mayfair,<br />
-                London W1J 6BD, United Kingdom<br />
-                GMT Hours &bull; London &bull; Europe Deployment
+                London &amp; UK Coverage Desk,<br />
+                Coordinated from Mumbai HQ,<br />
+                Shoots scheduled across London &amp; Europe<br />
+                UK hours by appointment
               </p>
             ) : (
               <p className="text-neutral-400 leading-relaxed font-sans text-xs">
                 A/803 Oceanic Tower Chs Ltd,<br />
                 Section 8, Charkop, Kandivali West,<br />
                 Mumbai, Maharashtra 400067<br />
-                Deployment: NESCO &bull; BKC &bull; Pan-India
+                Coverage: NESCO &bull; BKC &bull; Pan-India
               </p>
             )}
           </div>
@@ -118,9 +119,9 @@ export function Footer({ onQuoteClick, onGalleryClick, locationMode = "mumbai" }
             </div>
             {isUK ? (
               <div className="space-y-1.5 text-neutral-400 text-xs">
-                <a href="tel:+442081234567" className="block text-white font-semibold hover:text-red-400 transition-colors">+44 20 8123 4567</a>
-                <span className="text-[11px] text-neutral-500 block">London Liaison Desk (Mon–Fri 9am–6pm GMT)</span>
-                <a href="mailto:london@parekhevents.com" className="block hover:text-white transition-colors pt-1 text-neutral-300">london@parekhevents.com</a>
+                <a href="tel:+918657754937" className="block text-white font-semibold hover:text-red-400 transition-colors">+91 86577 54937</a>
+                <span className="text-[11px] text-neutral-500 block">London Desk — scheduled via Mumbai HQ (UK hours on request)</span>
+                <a href="mailto:parekhhevents@gmail.com" className="block hover:text-white transition-colors pt-1 text-neutral-300">parekhhevents@gmail.com</a>
               </div>
             ) : (
               <div className="space-y-1.5 text-neutral-400 text-xs">

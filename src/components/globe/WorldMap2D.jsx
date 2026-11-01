@@ -193,17 +193,36 @@ export function WorldMap2D({ hubs, selectedHub, onSelectHub }) {
     isDragging.current = false;
   };
 
+  // Touch panning is horizontal-only: the browser keeps vertical swipes for page scroll
+  // (touchAction: "pan-y"), so we translate the viewBox on the X axis alone.
+  const handleTouchMove = (e) => {
+    if (!isDragging.current || !svgRef.current) return;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const deltaX = clientX - dragStart.current.x;
+
+    const svgRect = svgRef.current.getBoundingClientRect();
+    const scaleX = initialViewBox.current.width / svgRect.width;
+
+    setViewBox({
+      minX: initialViewBox.current.minX - deltaX * scaleX,
+      minY: initialViewBox.current.minY,
+      width: initialViewBox.current.width,
+      height: initialViewBox.current.height,
+    });
+  };
+
   const viewBoxString = `${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}`;
 
   return (
     <div
       ref={containerRef}
       className="relative w-full h-full cursor-grab active:cursor-grabbing select-none overflow-hidden bg-[#0a0c12]"
+      style={{ touchAction: "pan-y" }}
       onMouseDown={handlePointerDown}
       onMouseMove={handlePointerMove}
       onMouseUp={handlePointerUp}
       onTouchStart={handlePointerDown}
-      onTouchMove={handlePointerMove}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handlePointerUp}
     >
       {/* Precision Grid Overlay */}

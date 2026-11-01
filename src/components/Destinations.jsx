@@ -68,14 +68,14 @@ export function Destinations({ onContactClick }) {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
           <p className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-neutral-400 mb-2">
-            GEOGRAPHIC FOOTPRINT &middot; ACTIVE DEPLOYMENT ENGINE
+            GEOGRAPHIC FOOTPRINT &middot; CAMERA CREW NETWORK
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-tight">
             Operational Hubs &amp; <br />
             Global Presence
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl">
-            Interactive territory map with on-ground show archives. Select a hub below to inspect past mega expos, multi-camera setups, and deployment corridors.
+            Interactive territory map with shoot archives. Select a hub to inspect past coverage, multi-camera films, and camera-crew corridors.
           </p>
         </div>
 

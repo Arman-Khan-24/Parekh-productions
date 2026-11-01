@@ -56,14 +56,14 @@ export function QuoteModal({ open, onClose }) {
     event.preventDefault();
 
     const textLines = [
-      "Hello Parekh Productions! I would like to request an event quote.",
+      "Hello Parekh Productions! I would like to request a shoot quote.",
       "",
       `Name: ${form.name}`,
       `Phone: ${form.phone}`,
       `Email: ${form.email || "Not provided"}`,
       `Service: ${form.service}`,
-      `Event Date: ${form.eventDate || "Not finalized"}`,
-      `Event City/Venue: ${form.eventCity || "Not provided"}`,
+      `Shoot Date: ${form.eventDate || "Not finalized"}`,
+      `Shoot City / Venue: ${form.eventCity || "Not provided"}`,
       `Brief: ${form.description}`,
     ];
 
@@ -99,7 +99,7 @@ export function QuoteModal({ open, onClose }) {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-red-50 text-[10px] font-bold uppercase tracking-wider text-red-600 mb-1 border border-red-200/50">
               <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
-              <span>Direct Dispatch · Instant Proposal</span>
+              <span>Direct Line · Instant Proposal</span>
             </div>
             <h2 className="mt-1 text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-950">
               Get A Quote
@@ -173,7 +173,7 @@ export function QuoteModal({ open, onClose }) {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="block">
-              <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-neutral-600">Event Date</span>
+              <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-neutral-600">Shoot Date</span>
               <input
                 type="date"
                 value={form.eventDate}
@@ -183,7 +183,7 @@ export function QuoteModal({ open, onClose }) {
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-neutral-600">Event City / Venue</span>
+              <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-neutral-600">Shoot City / Venue</span>
               <input
                 type="text"
                 value={form.eventCity}
@@ -201,7 +201,7 @@ export function QuoteModal({ open, onClose }) {
               rows={3}
               value={form.description}
               onChange={updateField("description")}
-              placeholder="Tell us attendee count, stage specs, cinema deliverables..."
+              placeholder="Tell us the date, the city, and the deliverables — films, photos, reels..."
               className="w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-900 outline-none focus:border-black focus:bg-white transition-all"
             />
           </label>

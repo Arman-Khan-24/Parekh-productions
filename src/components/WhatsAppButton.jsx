@@ -1,7 +1,7 @@
 export function WhatsAppButton() {
   const whatsappNumber = "918657754937";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Hello Parekh Productions! I'd like to inquire about your event production & media services."
+    "Hello Parekh Productions! I'd like to book a shoot — wedding, commercial, or event coverage."
   )}`;
 
   return (

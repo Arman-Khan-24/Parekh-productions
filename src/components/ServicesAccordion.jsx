@@ -258,8 +258,8 @@ export function ServicesAccordion({ onOpenQuote }) {
                     {/* Events category list if applicable */}
                     {service.types && (
                       <div className="mt-4 pt-3.5 border-t border-neutral-200">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block mb-2">
-                          Specialized Formats:
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block mb-2">
+                          Shoot Formats We Cover:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {service.types.map((type, tIdx) => (
@@ -289,7 +289,7 @@ export function ServicesAccordion({ onOpenQuote }) {
                         </a>
                       ) : (
                         <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
-                          100% In-House Technical Fleet
+                          100% In-House Camera Fleet
                         </span>
                       )}
 

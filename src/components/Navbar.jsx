@@ -63,7 +63,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
               className="hover:text-black transition-colors no-underline flex items-center gap-1.5 font-bold text-neutral-900 px-3 py-1 rounded-full bg-neutral-100 hover:bg-neutral-200"
             >
               <span>Mumbai</span>
-              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-white text-neutral-700 border border-neutral-200">IN</span>
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white text-neutral-700 border border-neutral-200">IN</span>
             </a>
           ) : (
             <a 
@@ -72,7 +72,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
               className="hover:text-blue-700 transition-colors no-underline flex items-center gap-1.5 font-bold text-neutral-900 px-3 py-1 rounded-full bg-neutral-100 hover:bg-blue-50"
             >
               <span>London</span>
-              <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-white text-neutral-700 border border-neutral-200">UK</span>
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white text-neutral-700 border border-neutral-200">UK</span>
             </a>
           )}
 
@@ -106,7 +106,7 @@ export function Navbar({ onContactClick, onGalleryClick, currentLocation = "mumb
 
       {/* Mobile Drawer with Smooth Animations */}
       {mobileMenu && (
-        <div className="md:hidden fixed inset-0 top-[68px] bg-white/95 backdrop-blur-2xl text-black px-7 py-8 flex flex-col justify-between text-base font-bold uppercase tracking-widest z-[9999] shadow-2xl overflow-y-auto border-t border-neutral-200 animate-drawer-down">
+        <div className="md:hidden fixed inset-0 top-16 sm:top-[76px] bg-white/95 backdrop-blur-2xl text-black px-7 py-8 flex flex-col justify-between text-base font-bold uppercase tracking-widest z-[9999] shadow-2xl overflow-y-auto border-t border-neutral-200 animate-drawer-down">
           <div className="flex flex-col gap-2">
             {[
               { href: "/#about", label: "About" },

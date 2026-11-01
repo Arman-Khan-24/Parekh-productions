@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "400px",
+      },
       colors: {
         amoled: "#000000",
       },
@@ -14,6 +17,10 @@ export default {
         display: ['Syne', 'Outfit', 'sans-serif'],
       },
     },
+  },
+  future: {
+    // hover: variants only fire on real hover-capable devices (no sticky :hover after touch taps)
+    hoverOnlyWhenSupported: true,
   },
   plugins: [],
 }

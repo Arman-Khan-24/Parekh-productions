@@ -140,6 +140,8 @@ export const siteContent = {
       venue: "NESCO Mumbai · Hall 4 & Ahmedabad",
       scale: "8,000+ Attendees · 14 Multicam Feeds",
       tagline: "Multi-camera broadcast and expo floor coverage of India's premier fintech expo.",
+      description: "Fourteen dedicated camera feeds streamed into one polished keynote broadcast — plus a full expo-floor film and photo archive that carried every sponsor's post-event marketing.",
+      deliverables: ["14-Cam Keynote Film", "Expo Floor Documentary", "Same-Night Press Album"],
       coverImage: "/assets/parekh/portfolio/finbridge-stage.jpg",
       highlights: [
         "Multi-camera live switching & keynote broadcast",
@@ -159,6 +161,8 @@ export const siteContent = {
       venue: "Commercial Studio & Locations",
       scale: "Nationwide Campaign Stills",
       tagline: "Studio culinary art direction, food styling, and billboard assets.",
+      description: "A giant billboard-and-print campaign shot entirely in our own studio — macro food textures, splash pours, and menu hero frames graded for print and social alike.",
+      deliverables: ["Billboard Hero Stills", "Menu Photography Suite", "Social Campaign Cuts"],
       coverImage: "/assets/parekh/portfolio/biryani-commercial.jpg",
       highlights: [
         "Custom studio lighting and macro lens capture for culinary textures",
@@ -178,6 +182,8 @@ export const siteContent = {
       venue: "Corporate Sports Arenas",
       scale: "Annual Corporate Sports Day",
       tagline: "High-shutter sports photography and corporate documentary.",
+      description: "Track, field, and podium framed at 1/2000s — every winning moment frozen sharp, curated same-evening and released to the foundation's press list.",
+      deliverables: ["High-Speed Action Sets", "Podium Ceremony Album", "Same-Evening Curated Gallery"],
       coverImage: "/assets/parekh/client_media/sports-action-1.jpg",
       highlights: [
         "1/2000s shutter capture across track, field, and team tournaments",
@@ -197,6 +203,8 @@ export const siteContent = {
       venue: "Industrial Expo Hall",
       scale: "Machinery Films & B2B Coverage",
       tagline: "Machinery demonstration films and business-to-business expo coverage.",
+      description: "Factory-grade lighting on moving machinery — demonstration films and B2B floor coverage built directly into the exhibitor's sales collateral.",
+      deliverables: ["Machinery Demo Films", "B2B Booth Coverage", "Exhibitor Reel"],
       coverImage: "/assets/parekh/client_media/screentex-expo.jpg",
       highlights: [
         "Machinery demonstration films under factory-grade lighting",
@@ -216,6 +224,8 @@ export const siteContent = {
       venue: "Executive Summits & Stadiums",
       scale: "Brand Ambassador Portfolios",
       tagline: "Precision optical brand films and athlete portfolio photography.",
+      description: "Executive keynotes, product demonstration reels, and a full brand-ambassador athlete portfolio — showcasing the glass before the world looked through it.",
+      deliverables: ["Executive Keynote Film", "Athlete Portfolios", "Product Demo Reels"],
       coverImage: "/assets/parekh/client_media/summit-speaker.jpg",
       highlights: [
         "National athlete sponsorship and ambassador portraiture",
@@ -235,6 +245,8 @@ export const siteContent = {
       venue: "Auto Expo Arena · Major Pavilion",
       scale: "Reveal Cinematography & 4K Streaming",
       tagline: "Launch-reveal cinematography, FPV drone passes, and broadcast streaming.",
+      description: "The reveal moment planned camera-first — synchronized multi-angle cinematography, FPV drone passes down the pavilion floor, and a clean 4K stream for every out-of-town stakeholder.",
+      deliverables: ["Reveal Cinematography", "FPV Drone Passes", "4K Live Stream Archive"],
       coverImage: "/assets/parekh/client_media/stage-lighting.jpg",
       highlights: [
         "Synchronized launch-reveal cinematography and 4K live streaming",

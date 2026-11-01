@@ -262,9 +262,6 @@ export function WheelProjectsShowcase({ onViewAllProjects }) {
           onMouseDown={onPointerDown}
           onMouseMove={onPointerMove}
           onMouseUp={onPointerUp}
-          onTouchStart={onPointerDown}
-          onTouchMove={onPointerMove}
-          onTouchEnd={onPointerUp}
         >
           {/* 3D WebGL Canvas Rendering Real Rotating Half-Wheel Stuck Hard Left */}
           <div ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />
@@ -513,7 +510,7 @@ export function WheelProjectsShowcase({ onViewAllProjects }) {
           {/* Deliverables */}
           <div className="pt-1">
             <span className="text-xs font-mono uppercase tracking-wider text-neutral-500 block mb-2 font-bold">
-              Deployment Package:
+              Deliverables:
             </span>
             <div className="flex flex-wrap gap-2">
               {currentProject.deliverables?.slice(0, 3).map((item, i) => (

@@ -14,43 +14,59 @@ import { Footer } from "./components/Footer";
 import { QuoteModal } from "./components/QuoteModal";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { ServicesPage } from "./pages/ServicesPage";
+import { SEOPage } from "./pages/SEOPage";
+import { pageContent, metaByPath } from "./data/pages";
 import { ArrowLeft } from "lucide-react";
+
+// Every real path the router supports, derived from the single meta source (pages.js)
+const PATH_KEYS = Object.fromEntries(
+  Object.values(pageContent).map((p) => [p.path.replace(/\/$/, ""), p.key])
+);
+const PATH_ALIASES = { "/uk": "/london" };
+
+// raw (pathname or hash fragment) -> canonical route, or null when unsupported
+const normalizeUrlPath = (raw) => {
+  const n = (raw || "").replace(/^#/, "").toLowerCase().replace(/\/$/, "");
+  if (PATH_KEYS[n]) return n;
+  if (PATH_ALIASES[n]) return PATH_ALIASES[n];
+  return null;
+};
+
+// current browser location -> route; SSR returns null
+const routeFromLocation = () => {
+  if (typeof window === "undefined") return null;
+  return normalizeUrlPath(window.location.pathname) || normalizeUrlPath(window.location.hash);
+};
 
 export default function App({ initialPath }) {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   // Normalize initial route from window pathname or hash or initialPath prop
   const getInitialRoute = () => {
-    if (initialPath) return initialPath;
-    if (typeof window === "undefined") return "/";
-    const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
-    const hash = window.location.hash.toLowerCase();
-    
-    if (path === "/london" || path === "/uk" || hash === "#/london" || hash === "#/uk") {
-      return "/london";
-    }
-    if (path === "/services" || hash === "#/services") {
-      return "/services";
-    }
-    if (path === "/gallery" || hash === "#/gallery") {
-      return "/gallery";
-    }
+    const direct = normalizeUrlPath(initialPath);
+    if (direct) return direct;
 
-    // Smart non-intrusive Geo Detection:
-    // If the user arrives on the root URL "/" with no manual preference set,
-    // detect their device timezone. If outside of Indian Standard Time,
+    const fromWindow = routeFromLocation();
+    if (fromWindow) return fromWindow;
+
+    if (typeof window === "undefined") return "/";
+
+    // Smart non-intrusive Geo Detection (root routes only):
+    // if the visitor is clearly outside IST and has no saved preference,
     // gracefully route them to the London / UK division.
-    try {
-      const savedPref = localStorage.getItem("parekh_region_pref");
-      if (!savedPref && (path === "" || path === "/")) {
-        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-        const isIndiaTz = timeZone.includes("Calcutta") || timeZone.includes("Kolkata") || timeZone === "Asia/Colombo";
-        if (!isIndiaTz && timeZone) {
-          return "/london";
+    if (window.location.pathname === "/" || window.location.pathname === "") {
+      try {
+        const savedPref = localStorage.getItem("parekh_region_pref");
+        if (!savedPref) {
+          const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          const isIndiaTz = timeZone.includes("Calcutta") || timeZone.includes("Kolkata") || timeZone === "Asia/Colombo";
+          if (!isIndiaTz && timeZone) {
+            return "/london";
+          }
         }
+      } catch (e) {
+        // Ignore localStorage restrictions in privacy mode
       }
-    } catch (e) {
-      // Ignore localStorage restrictions in privacy mode
     }
 
     return "/";
@@ -60,18 +76,7 @@ export default function App({ initialPath }) {
 
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.toLowerCase().replace(/\/$/, "");
-      const hash = window.location.hash.toLowerCase();
-      
-      if (path === "/london" || path === "/uk" || hash === "#/london" || hash === "#/uk") {
-        setCurrentRoute("/london");
-      } else if (path === "/services" || hash === "#/services") {
-        setCurrentRoute("/services");
-      } else if (path === "/gallery" || hash === "#/gallery") {
-        setCurrentRoute("/gallery");
-      } else {
-        setCurrentRoute("/");
-      }
+      setCurrentRoute(routeFromLocation() || "/");
     };
 
     window.addEventListener("popstate", handlePopState);
@@ -81,6 +86,15 @@ export default function App({ initialPath }) {
       window.removeEventListener("hashchange", handlePopState);
     };
   }, []);
+
+  // Per-route <title> + meta description (single source: src/data/pages.js)
+  useEffect(() => {
+    const meta = metaByPath[currentRoute] || metaByPath["/"];
+    if (typeof document === "undefined" || !meta) return;
+    if (meta.title) document.title = meta.title;
+    const descTag = document.querySelector('meta[name="description"]');
+    if (meta.description && descTag) descTag.setAttribute("content", meta.description);
+  }, [currentRoute]);
 
   const navigateTo = (route) => {
     if (typeof window !== "undefined") {
@@ -161,6 +175,12 @@ export default function App({ initialPath }) {
         <QuoteModal open={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
       </div>
     );
+  }
+
+  // Keyword landing pages — full SEO deep routes (corporate-events-mumbai, contact, etc.)
+  const seoKey = PATH_KEYS[currentRoute];
+  if (seoKey && seoKey !== "home" && seoKey !== "london") {
+    return <SEOPage page={pageContent[seoKey]} onNavigate={navigateTo} />;
   }
 
   // Route: / or /london (Flagship Cinematic Landing Page with Dynamic Location Mode)

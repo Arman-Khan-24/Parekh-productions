@@ -76,7 +76,7 @@ export function StudioShowcase() {
         <img
           src={current.image}
           alt={current.title}
-          className="h-full w-full object-cover transition-transform duration-700 hover:scale-102"
+          className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
         />
       </div>
 
