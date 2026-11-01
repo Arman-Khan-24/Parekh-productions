@@ -86,7 +86,7 @@ export function FannedCardsShowcase() {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20 pointer-events-none" />
